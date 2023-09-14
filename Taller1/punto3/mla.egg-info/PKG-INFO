@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: mla
+Version: 0.0.1
+Summary: A collection of minimal and clean implementations of machine learning algorithms.
+Home-page: https://github.com/lmbd92/ML_II_UdeA/tree/main
+Author: Lna Beltran
+Author-email: linam.beltran@udea.edu.co
+License: MIT

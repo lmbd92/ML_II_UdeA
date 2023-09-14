@@ -1,51 +1,56 @@
 import numpy as np
-from scipy.linalg import svd
 
 
-# This fuction calculates the eigenvectors corresponding for u and v matrices
-def calcMat(M, opc):
-    if opc == 1:
-        newM = np.dot(M.T, M)
-    if opc == 2:
-        newM = np.dot(M, M.T)
+def svd(A, k=None):
+    # Perform SVD using the eigendecomposition of A*A^T and A^T*A
+    U, S, Vt = svd_eigendecomposition(A)
 
-    eigenvalues, eigenvectors = np.linalg.eig(newM)
-    ncols = np.argsort(eigenvalues)[::-1]
+    if k is not None:
+        # Truncate to the top k singular values/vectors
+        U = U[:, :k]
+        S = S[:k]
+        Vt = Vt[:k, :]
 
-    if opc == 1:
-        return eigenvectors[:, ncols].T
-    else:
-        return eigenvectors[:, ncols]
+    # Reconstruct the compressed image
+    comp_image = np.dot(U, np.dot(np.diag(S), Vt))
 
-
-# This function calculates the eigenvalues corresponding to the sigma matrix
-def calcD(M):
-    if np.size(np.dot(M, M.T)) > np.size(np.dot(M.T, M)):
-        newM = np.dot(M.T, M)
-    else:
-        newM = np.dot(M, M.T)
-
-    eigenvalues, eigenvectors = np.linalg.eig(newM)
-    eigenvalues = np.sqrt(eigenvalues)
-
-    return eigenvalues[::-1]
+    return comp_image, U, S, Vt
 
 
-# Create the matrix A
-A = np.array([[4, 2, 0], [1, 5, 6]])
+def svd_eigendecomposition(A):
+    # Compute A * A^T and A^T * A
+    AAT = np.dot(A, A.T)
+    ATA = np.dot(A.T, A)
+
+    # Compute eigenvectors and eigenvalues of A * A^T
+    eig_values_U, U = np.linalg.eigh(AAT)
+    # Ensure non-negative singular values
+    eig_values_U = np.sqrt(np.abs(eig_values_U))
+
+    # Compute eigenvectors and eigenvalues of A^T * A
+    eig_values_Vt, Vt = np.linalg.eigh(ATA)
+    # Ensure non-negative singular values
+    eig_values_Vt = np.sqrt(np.abs(eig_values_Vt))
+
+    # Sort U, S, and Vt in descending order of singular values
+    sort_indices_U = np.argsort(eig_values_U)[::-1]
+    sort_indices_Vt = np.argsort(eig_values_Vt)[::-1]
+    U = U[:, sort_indices_U]
+    S = eig_values_U[sort_indices_U]
+    Vt = Vt[:, sort_indices_Vt]
+
+    return U, S, Vt
 
 
-# Now we’ll assign values to our variables by calling the functions we created in the previous steps.
-
-Vt = calcMat(A, 1)
-U = calcMat(A, 2)
-Sigma = calcD(A)
-
-print(Vt, "\n")
-print(U, "\n")
-print(Sigma)
-
-U_svd, D, VT = np.linalg.svd(A)
-print(VT, "\n")
-print(U_svd, "\n")
-print(D)
+# Example usage:
+A = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+k = 2  # Number of singular values/vectors to keep
+comp_image, U, S, Vt = svd(A, k)
+print("Compressed Image:")
+print(comp_image)
+print("U:")
+print(U)
+print("S:")
+print(S)
+print("Vt:")
+print(Vt)
