@@ -69,3 +69,16 @@ The algorithm to compute spectral clustering involves several steps:
 Post-processing: Depending on the specific application, we may need to refine the clusters or perform additional analysis.
 
 Here an example of the algorithm: https://www.geeksforgeeks.org/ml-spectral-clustering/
+
+
+### d. Does it hold any relation to some of the concepts previously mentioned in class? Which, and how?
+
+Spectral clustering is a graph-based clustering technique that uses the eigenvalues and eigenvectors of the Laplacian matrix to uncover clusters in data. It is closely related to other graph-based clustering algorithms, such as normalized cuts and graph partitioning. It is also related to other clustering algorithms, such as K-means and DBSCAN, which can be viewed as special cases of spectral clustering.
+
+**Normalized Cuts**: Normalized cuts is a graph partitioning algorithm that uses the normalized Laplacian matrix to find a partition of the graph into two sets of nodes that are well-connected internally and weakly connected externally. It is closely related to spectral clustering because both algorithms use the normalized Laplacian matrix and eigenvalue decomposition to find clusters in data.
+
+**Graph Partitioning**: Graph partitioning is a problem in graph theory that involves partitioning a graph into two or more subgraphs. It is closely related to spectral clustering because both algorithms use the Laplacian matrix and eigenvalue decomposition to find clusters in data.
+
+**K-means**: K-means is a popular clustering algorithm that uses the Euclidean distance between data points to find clusters. It can be viewed as a special case of spectral clustering, where the affinity matrix is the Euclidean distance matrix and the Laplacian matrix is the unnormalized Laplacian matrix.
+
+**DBSCAN**: DBSCAN is a density-based clustering algorithm that uses the density of data points to find clusters. It can be viewed as a special case of spectral clustering, where the affinity matrix is the Gaussian affinity matrix and the Laplacian matrix is the unnormalized Laplacian matrix.
