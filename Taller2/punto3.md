@@ -4,7 +4,7 @@
 
 The elbow method is a heuristic method of interpretation and validation of consistency within cluster analysis designed to help find the appropriate number of clusters in a dataset. It is ambiguous and not very reliable, because it is based on the idea that the optimal number of clusters can be found at the point where the curve shows an "elbow". This is not always the case, as shown in the figure below.
 
-![Alt text](elbow.png)
+![Alt text](./assets/images/elbow.png)
 
 It helps in finding the "elbow point" on a plot of the number of clusters (k) against the within-cluster sum of squares (WCSS) or the cost function. The WCSS measures the sum of squared distances between data points and their assigned cluster centroids. The idea behind the elbow method is to select a value of k where the decrease in WCSS starts to slow down, creating an "elbow" shape on the plot. This is because, as the number of clusters increases, the WCSS value will start to decrease more slowly, and at some point, the rate of decrease will become very small, resulting in an elbow shape in the graph.
 

@@ -32,7 +32,7 @@ The core idea behind DBSCAN is to identify clusters based on the density of data
 
 6. Cluster Separation: Clusters are separated by noise points, which act as natural boundaries. If a point is not reachable from any core point, it's treated as noise.
 
-![Alt text](image.png)
+![Alt text](./assets/images/image.png)
 
 ### c. Is there any relation between DBSCAN and Spectral Clustering? If so, what is it?
 
