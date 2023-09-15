@@ -2,7 +2,7 @@ import numpy as np
 
 
 def svd(A, k=None):
-    # Perform SVD using the eigendecomposition of A*A^T and A^T*A
+    """ Perform SVD using the eigendecomposition of A*A^T and A^T*A"""
     U, S, Vt = svd_eigendecomposition(A)
 
     if k is not None:
@@ -18,7 +18,7 @@ def svd(A, k=None):
 
 
 def svd_eigendecomposition(A):
-    # Compute A * A^T and A^T * A
+    """ Compute A * A^T and A^T * A"""
     AAT = np.dot(A, A.T)
     ATA = np.dot(A.T, A)
 

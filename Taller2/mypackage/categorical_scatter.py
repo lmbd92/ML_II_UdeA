@@ -10,6 +10,7 @@ import matplotlib.pyplot as plt
 def categorical_scatter_2d(X2D, class_idxs, ms=3, ax=None, alpha=0.1, 
                            legend=True, figsize=None, show=False, 
                            savename=None):
+    """Plot a 2D scatter plot with markers for classes."""
     ## Plot a 2D matrix with corresponding class labels: each class diff colour
     if ax is None:
         fig, ax = plt.subplots(figsize=figsize)
