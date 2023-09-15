@@ -4,6 +4,7 @@ import numpy as np
 
 class KMeans:
     """K-Means class for clustering algorithm."""
+
     def __init__(self, n_clusters, max_iters=1000, tol=1e-5):
         self.n_clusters = n_clusters
         self.max_iters = max_iters
