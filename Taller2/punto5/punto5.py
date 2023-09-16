@@ -1,7 +1,6 @@
-""" Punto 5.  expeiment with the silhouette score to determine the optimal number of clusters for the scattered data X, using the k-means and k-medoids algorithms."""
+""" Punto 5.  experiment with the silhouette score to determine the optimal number of clusters for the scattered data X, using the k-means and k-medoids algorithms."""
 
-from mypackage.k_means import KMeans
-from mypackage.k_medoids import KMedoids
+from mymlpackage import KMeans, KMedoids
 from sklearn.datasets import make_blobs
 from sklearn.metrics import silhouette_score
 import matplotlib.pyplot as plt

@@ -1,4 +1,4 @@
-# My ML package (mypackage):
+# My ML package (mymlpackage):
 
 This is a simple package that contains some useful functions for machine
 learning.
@@ -9,13 +9,13 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install my
 package.
 
 ```bash
-pip install mypackage
+pip install mymlpackage
 ```
 
 ## Usage example
 
 ```python
-import mypackage as mp
+import mymlpackage as mp
 mp.KMeans(X, k, max_iter, tol)
 ```
 

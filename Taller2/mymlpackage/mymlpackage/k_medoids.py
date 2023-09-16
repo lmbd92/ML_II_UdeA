@@ -1,9 +1,21 @@
-import numpy as np
+""" K-Medoids clustering algorithm. """
 import random
+import numpy as np
 from scipy.sparse import csr_matrix
 
 
 class KMedoids:
+    """
+    Initialize K-Medoids clustering.
+
+    Parameters:
+    - n_clusters: Number of clusters.
+    - max_iterations: Maximum number of iterations.
+    - tolerance: Tolerance for convergence.
+    - start_prob: Start probability for selecting distant medoids.
+    - end_prob: End probability for selecting distant medoids.
+    """
+
     def __init__(
         self,
         n_clusters=2,
@@ -12,16 +24,6 @@ class KMedoids:
         start_prob=0.8,
         end_prob=0.99,
     ):
-        """
-        Initialize K-Medoids clustering.
-
-        Parameters:
-        - n_clusters: Number of clusters.
-        - max_iterations: Maximum number of iterations.
-        - tolerance: Tolerance for convergence.
-        - start_prob: Start probability for selecting distant medoids.
-        - end_prob: End probability for selecting distant medoids.
-        """
         if not 0 <= start_prob < end_prob <= 1:
             raise ValueError("Invalid input probabilities")
         self.n_clusters = n_clusters

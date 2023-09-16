@@ -2,7 +2,7 @@ import numpy as np
 
 
 def svd(A, k=None):
-    """ Perform SVD using the eigendecomposition of A*A^T and A^T*A"""
+    """Perform SVD using the eigendecomposition of A*A^T and A^T*A"""
     U, S, Vt = svd_eigendecomposition(A)
 
     if k is not None:
@@ -18,7 +18,7 @@ def svd(A, k=None):
 
 
 def svd_eigendecomposition(A):
-    """ Compute A * A^T and A^T * A"""
+    """Compute A * A^T and A^T * A"""
     AAT = np.dot(A, A.T)
     ATA = np.dot(A.T, A)
 
@@ -40,17 +40,3 @@ def svd_eigendecomposition(A):
     Vt = Vt[:, sort_indices_Vt]
 
     return U, S, Vt
-
-
-# Example usage:
-A = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
-k = 2  # Number of singular values/vectors to keep
-comp_image, U, S, Vt = svd(A, k)
-print("Compressed Image:")
-print(comp_image)
-print("U:")
-print(U)
-print("S:")
-print(S)
-print("Vt:")
-print(Vt)
