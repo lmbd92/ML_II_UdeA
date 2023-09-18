@@ -1,6 +1,9 @@
 ## Exercise 5. Unsupervised learning
 
-Let’s use the newly created modules in unsupervised to cluster some toy data.
+Let’s use the newly created modules to cluster some toy data.
+
+See the code in [punto5.py](punto5.py)
+
 a. Use the following code snippet to create scattered data X
 ```python
 from sklearn.datasets import make_blobs
@@ -22,5 +25,6 @@ b. Plot the resulting dataset. How many clusters are there? How far are they fro
 
 c. For both k-means and k-medoids (your implementations), calculate the silhouette plots and
 coefficients for each run, iterating K from 1 to 5 clusters.
+
 d. What number of K got the best silhouette score? What can you say about the figures? Is this the
 expected result?

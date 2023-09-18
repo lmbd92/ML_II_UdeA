@@ -1,11 +1,15 @@
 # My ML package (mymlpackage):
 
 This is a simple package that contains some useful functions for machine
-learning.
+learning, to practice an experiment in the ML course from the University of
+Antioquia.
+
+for mor information about the package, please visit the
+[documentation](https://pypi.org/project/mymlpackage/#files)
 
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install my
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install this
 package.
 
 ```bash
@@ -16,7 +20,10 @@ pip install mymlpackage
 
 ```python
 import mymlpackage as mp
+
 mp.KMeans(X, k, max_iter, tol)
+mp.KMedoids(X, k, max_iter, tol)
+mp.svd(X)
 ```
 
 ## License
@@ -46,6 +53,7 @@ SOFTWARE.
 ```
 
 ## Authors
+
 Name: Lina María Beltrán Durango
 
 E-mail: linam.beltran@udea.edu.co
