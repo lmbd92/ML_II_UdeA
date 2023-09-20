@@ -1,0 +1,3 @@
+**What do you think is the best distance criterion to estimate how far two embeddings (vectors) are from each other? Why?**
+
+I think the best distance criterion to estimate how far two embeddings are from each other is cosine similarity. This is because cosine similarity is a measure of the angle between two vectors, which is a good measure of how similar two vectors are. For example, if two vectors are very similar, then their angle will be close to 0 degrees. If two vectors are very different, then their angle will be close to 180 degrees. This is a good measure of how similar two vectors are because it takes into account both the magnitude and direction of the vectors.
