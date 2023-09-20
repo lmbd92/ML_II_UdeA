@@ -21,11 +21,9 @@ command:
 
 - Option 1:
 
-````python
-
 ```python
 python punto3.py
-````
+```
 
 - Option 2:
 
