@@ -52,11 +52,22 @@ for k in k_values:
     kmedoids_scores.append(kmedoids_silhouette)
 
 # Plot the silhouette scores for both k-means and k-medoids
-plt.plot(k_values, kmeans_scores, label="K-Means")
-plt.plot(k_values, kmedoids_scores, label="K-Medoids")
+plt.figure(figsize=(12, 4))
+plt.subplot(1, 2, 1)
+plt.plot(k_values, kmeans_scores, marker="o", label="K-Means")
+plt.title("K-Means Silhouette Scores")
 plt.xlabel("Number of Clusters (K)")
 plt.ylabel("Silhouette Score")
 plt.legend()
+
+plt.subplot(1, 2, 2)
+plt.plot(k_values, kmedoids_scores, marker="o", label="K-Medoids")
+plt.title("K-Medoids Silhouette Scores")
+plt.xlabel("Number of Clusters (K)")
+plt.ylabel("Silhouette Score")
+plt.legend()
+
+plt.tight_layout()
 plt.show()
 
 best_k_kmeans = k_values[np.argmax(kmeans_scores)]
